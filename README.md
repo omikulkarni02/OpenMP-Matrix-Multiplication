@@ -29,7 +29,7 @@ If the matrix is stored in row in RAM, then it is slow to read the columns becau
 •	In transpose matrix multiplication with blocking approach i.e. in block_matrix_mul_transposed() function, we consider multiplication of Matrix 1 and transpose of Matrix 2. We partition the large matrix into submatrices with specified block size (block size: 100) for efficient computation.  
 
 
-References
+# References
 Wikipedia, n.d. Wikipedia. [Online] 
 Available at: https://en.wikipedia.org/wiki/Loop_nest_optimization
 [Accessed 13 4 2020].
