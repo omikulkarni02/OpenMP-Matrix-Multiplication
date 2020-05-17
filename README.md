@@ -1,8 +1,7 @@
-# OpenMP-Matrix-Multiplication
 # Overview:
 Matrix multiplication is one of the most basic operations in computer science. The naïve approach for large matrix  multiplication is not optimal and required O(n3) time complexity. OpenMP allows us to compute large matrix multiplication in parallel using multiple threads. In this assignment I have used block based tilling approach and matrix transpose approach for efficient computation. 
 
-#Use of OpenMP:
+# Use of OpenMP:
 Using OpenMP in this program we converted sequential matrix multiplication code into multi-threaded code.
 •	A Private variable scope is used in program, which allows each thread to have its own private copy of a variable.
 •	As we have nested for loops  in our program, use of collapse directive helps us achieve more efficiency by collapsing nested loops into single loop and parallelize the resulting loop.
@@ -23,30 +22,6 @@ If the matrix is stored in row in RAM, then it is slow to read the columns becau
 •	In loop tiling approach i.e. in tiled_matrix_multiplication() function we consider only a block of matrix (block size: 100) at a time for computation and iterate over it. After each element is visited in that block, we increment the for loop by specified block size. (chang, 2014)
 •	In transpose matrix multiplication with blocking approach i.e. in block_matrix_mul_transposed() function, we consider multiplication of Matrix 1 and transpose of Matrix 2. We partition the large matrix into submatrices with specified block size (block size: 100) for efficient computation.  
 
-# Results:
-Results that is computation time depends on the system configuration, hence below are the specifications of the system on which program was tested
-Processor: Intel® Core™ i5-8300H
-L3 Cache: 8MB
-Matrix Size: 500*500
-Approach		Number of Threads	
-	2 Threads	4 Threads	8 Threads
-Block Loop Tiling	0.28 sec 	0.26 sec	0.25 sec
-Block Matrix Transpose	0.30 sec	0.29 sec	0.28 sec
-Sequential 	1.32 sec	1.30 sec	1.25 sec 
-
-Matrix Size: 1000*1000
-Approach		Number of Threads	
-	2 Threads	4 Threads	8 Threads
-Block Loop Tiling	1.90 sec 	1.85 sec	1.7 sec
-Block Matrix Transpose	2.49 sec	2.30 sec	2.2 sec
-Sequential 	17.40 sec	17.64 sec	17.50 sec 
-
-Matrix Size: 1500*1500
-Approach		Number of Threads	
-	2 Threads	4 Threads	8 Threads
-Block Loop Tiling	6.70 sec 	6.68 sec	6.60 sec
-Block Matrix Transpose	6.60 sec	6.81 sec	6.68sec
-Sequential 	69.60 sec	70.05 sec	69.64 sec 
 
 References
 Wikipedia, n.d. Wikipedia. [Online] 
