@@ -33,6 +33,7 @@ If the matrix is stored in row in RAM, then it is slow to read the columns becau
 Wikipedia, n.d. Wikipedia. [Online] 
 Available at: https://en.wikipedia.org/wiki/Loop_nest_optimization
 [Accessed 13 4 2020].
+
 chang, c., 2014. Github. [Online] 
 Available at: https://github.com/chunkaichang/OpenMP-MatrixOP/blob/master/tiled.c
 [Accessed 13 04 2020].
