@@ -4,8 +4,11 @@ Matrix multiplication is one of the most basic operations in computer science. T
 # Use of OpenMP:
 Using OpenMP in this program we converted sequential matrix multiplication code into multi-threaded code.
 •	A Private variable scope is used in program, which allows each thread to have its own private copy of a variable.
+
 •	As we have nested for loops  in our program, use of collapse directive helps us achieve more efficiency by collapsing nested loops into single loop and parallelize the resulting loop.
+
 •	The parallel construct creates a team of thread and starts parallel execution. The parallel for  specifies that the block of code will be iterated in parallel by threads present in team of threads.
+
 •	The critical construct restricts the execution of code block to single thread at a time. In this program, the actual arithmetic calculation of matrix multiplication is placed inside critical section.
 
 # Efficient Matrix Multiplication approaches:
@@ -18,8 +21,11 @@ If the matrix is stored in row in RAM, then it is slow to read the columns becau
 
 # Program flow:
 •	Two matrices: Matrix 1 and Matrix 2 of different sizes (500,1000 and 1500) are created by create_matrix() function in the program. This function generates random numbers and fills the matrix with these values. Initially memory is allocated for the matrix with specified size. 
+
 •	get_clock() function is used to determine the time required by multiplication algorithm to compute the result.
+
 •	In loop tiling approach i.e. in tiled_matrix_multiplication() function we consider only a block of matrix (block size: 100) at a time for computation and iterate over it. After each element is visited in that block, we increment the for loop by specified block size. (chang, 2014)
+
 •	In transpose matrix multiplication with blocking approach i.e. in block_matrix_mul_transposed() function, we consider multiplication of Matrix 1 and transpose of Matrix 2. We partition the large matrix into submatrices with specified block size (block size: 100) for efficient computation.  
 
 
